@@ -25,6 +25,7 @@ const Layout = ({ children }) => {
         styles={css`
           body {
             margin: 0;
+            -webkit-font-smoothing: antialiased;
           }
         `}
       />
