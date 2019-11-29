@@ -1,12 +1,12 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from 'gatsby'
 /** @jsx jsx */
-import { ThemeProvider, jsx } from "theme-ui"
-import { Global, css } from "@emotion/core"
+import { ThemeProvider, jsx } from 'theme-ui'
+import { Global, css } from '@emotion/core'
 
-import Header from "./header"
-import theme from "theme"
+import Header from './header'
+import theme from 'theme'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
