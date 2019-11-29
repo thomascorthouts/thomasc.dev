@@ -8,9 +8,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+/** @jsx jsx */
+import { ThemeProvider, jsx } from "theme-ui"
 
 import Header from "./header"
-import "./layout.css"
+import theme from "theme"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,7 +26,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
@@ -37,7 +39,7 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <footer>© {new Date().getFullYear()}, Built by Thomas Corthouts</footer>
       </div>
-    </>
+    </ThemeProvider>
   )
 }
 
