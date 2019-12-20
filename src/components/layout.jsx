@@ -1,11 +1,12 @@
+/** @jsx jsx */
+import { ThemeProvider, jsx } from 'theme-ui'
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-/** @jsx jsx */
-import { ThemeProvider, jsx } from 'theme-ui'
 import { Global, css } from '@emotion/core'
 
 import Header from './header'
+import Footer from './footer'
 import theme from 'theme'
 
 const Layout = ({ children }) => {
@@ -30,8 +31,8 @@ const Layout = ({ children }) => {
         `}
       />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
-      <footer>© {new Date().getFullYear()}, Built by Thomas Corthouts</footer>
+      <main sx={{ color: 'greyDark', px: 3 }}>{children}</main>
+      <Footer />
     </ThemeProvider>
   )
 }

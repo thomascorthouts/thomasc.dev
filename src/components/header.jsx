@@ -1,34 +1,30 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+
+import Bitmoji from 'images/bitmoji.png'
 
 const Header = ({ siteTitle }) => (
   <header
     sx={{
       bg: 'blue',
-      mb: `1.45rem`,
+      color: `white`,
+      mb: 3,
+      p: 3,
     }}
   >
     <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+      sx={{
+        maxWidth: 13,
+        display: 'flex',
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+      <Link to="/">
+        <img src={Bitmoji} alt="Bitmoji drawing of Thomas" sx={{ height: 3 }} />
+      </Link>
+      <h1 sx={{ margin: 0, ml: 3 }}>{siteTitle}</h1>
     </div>
   </header>
 )
