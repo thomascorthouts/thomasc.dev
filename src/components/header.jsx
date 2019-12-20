@@ -6,7 +6,7 @@ import React from 'react'
 
 import Bitmoji from 'images/bitmoji.png'
 
-const Header = ({ siteTitle }) => (
+const Header = ({ title }) => (
   <header
     sx={{
       bg: 'blue',
@@ -24,17 +24,13 @@ const Header = ({ siteTitle }) => (
       <Link to="/">
         <img src={Bitmoji} alt="Bitmoji drawing of Thomas" sx={{ height: 3 }} />
       </Link>
-      <h1 sx={{ margin: 0, ml: 3 }}>{siteTitle}</h1>
+      <h1 sx={{ margin: 0, ml: 3 }}>{title}</h1>
     </div>
   </header>
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  title: PropTypes.string.isRequired,
 }
 
 export default Header
