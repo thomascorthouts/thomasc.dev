@@ -1,44 +1,65 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import { Flex, Box } from '@theme-ui/components'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
 
-const Header = ({ siteTitle }) => (
-  <header
+import Bitmoji from 'images/bitmoji.png'
+
+const Header = ({ title }) => (
+  <Flex
+    as="header"
     sx={{
       bg: 'blue',
-      mb: `1.45rem`,
+      color: `white`,
+      mb: 3,
+      p: 3,
+      justifyContent: 'space-between',
     }}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+    <Box
+      sx={{
+        maxWidth: 13,
+        display: 'flex',
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+      <Link to="/">
+        <img src={Bitmoji} alt="Bitmoji drawing of Thomas" sx={{ height: 3 }} />
+      </Link>
+      <h1 sx={{ margin: 0, ml: 3 }}>{title}</h1>
+    </Box>
+    <Box as="nav" sx={{ mt: 'auto' }}>
+      <Link
+        to="/"
+        sx={{
+          fontSize: 4,
+          color: 'greyLighter',
+          '&:hover, &:focus': { color: 'white' },
+          textDecoration: 'none',
+          ml: 2,
+        }}
+      >
+        Home
+      </Link>
+      <Link
+        to="/about"
+        sx={{
+          fontSize: 4,
+          color: 'greyLighter',
+          '&:hover, &:focus': { color: 'white' },
+          textDecoration: 'none',
+          ml: 2,
+        }}
+      >
+        About
+      </Link>
+    </Box>
+  </Flex>
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  title: PropTypes.string.isRequired,
 }
 
 export default Header
