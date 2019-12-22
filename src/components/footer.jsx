@@ -14,18 +14,17 @@ const Footer = () => (
   <Flex
     as="footer"
     sx={{
-      bg: 'blue',
-      color: 'white',
       mt: 3,
       py: 3,
-      pl: 3,
       flexDirection: 'column',
+      borderTopStyle: 'double',
+      borderTopColor: 'blue',
     }}
   >
     <Box sx={{ mx: 'auto' }}>
       <a
         href={GITHUB_LINK}
-        sx={{ color: 'greyLight', '&:hover, &:focus': { color: 'white' } }}
+        sx={{ color: 'greyLight', '&:hover, &:focus': { color: 'grey' } }}
       >
         <IconGithub
           sx={{
@@ -37,7 +36,7 @@ const Footer = () => (
       </a>
       <a
         href={LINKEDIN_LINK}
-        sx={{ color: 'greyLight', '&:hover, &:focus': { color: 'white' } }}
+        sx={{ color: 'greyLight', '&:hover, &:focus': { color: 'grey' } }}
       >
         <IconLinkedIn
           sx={{
@@ -49,7 +48,7 @@ const Footer = () => (
       </a>
       <a
         href={TWITTER_LINK}
-        sx={{ color: 'greyLight', '&:hover, &:focus': { color: 'white' } }}
+        sx={{ color: 'greyLight', '&:hover, &:focus': { color: 'grey' } }}
       >
         <IconTwitter
           sx={{
@@ -62,7 +61,17 @@ const Footer = () => (
     </Box>
     <Box sx={{ mx: 'auto', mt: 2 }}>
       © 2019, Built with{' '}
-      <a href="https://www.gatsbyjs.org" sx={{ color: 'white' }}>
+      <a
+        href="https://www.gatsbyjs.org"
+        sx={{
+          color: 'grey',
+          textDecoration: 'none',
+          '&:hover, &:focus': {
+            color: 'greyDark',
+            textDecoration: 'underline',
+          },
+        }}
+      >
         Gatsby
       </a>
     </Box>
