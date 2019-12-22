@@ -28,6 +28,9 @@ const Layout = ({ title, children }) => {
             margin: 0;
             -webkit-font-smoothing: antialiased;
           }
+          svg {
+            fill: currentColor;
+          }
         `}
       />
       <Header title={title} />
