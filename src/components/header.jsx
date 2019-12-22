@@ -29,9 +29,31 @@ const Header = ({ title }) => (
       </Link>
       <h1 sx={{ margin: 0, ml: 3 }}>{title}</h1>
     </Box>
-    <Box as="nav">
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
+    <Box as="nav" sx={{ mt: 'auto' }}>
+      <Link
+        to="/"
+        sx={{
+          fontSize: 4,
+          color: 'greyLighter',
+          '&:hover, &:focus': { color: 'white' },
+          textDecoration: 'none',
+          ml: 2,
+        }}
+      >
+        Home
+      </Link>
+      <Link
+        to="/about"
+        sx={{
+          fontSize: 4,
+          color: 'greyLighter',
+          '&:hover, &:focus': { color: 'white' },
+          textDecoration: 'none',
+          ml: 2,
+        }}
+      >
+        About
+      </Link>
     </Box>
   </Flex>
 )
