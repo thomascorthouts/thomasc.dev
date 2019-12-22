@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import React from 'react'
 import { Link } from 'gatsby'
-import { Flex, Box, Text } from '@theme-ui/components'
+import { Flex, Box } from '@theme-ui/components'
 
 import Layout from 'components/layout'
 import Image from 'components/image'
@@ -21,7 +21,11 @@ const AboutPage = () => (
       <img
         src={ImageThomas}
         alt="Frontal image of Thomas' face"
-        sx={{ maxWidth: 9, mx: [null, null, null, null, null, 5] }}
+        sx={{
+          maxWidth: 9,
+          mx: [null, null, null, null, null, 5],
+          borderRadius: t => t.radii[0],
+        }}
       />
       <Box>
         <article sx={{ maxWidth: 13, fontSize: [2, null, 3] }}>
