@@ -2,10 +2,9 @@
 import { jsx } from 'theme-ui'
 import React from 'react'
 import { Link } from 'gatsby'
-import { Flex, Box } from '@theme-ui/components'
+import { Flex, Box, Image, Text } from '@theme-ui/components'
 
 import Layout from 'components/layout'
-import Image from 'components/image'
 import SEO from 'components/seo'
 
 import ImageThomas from 'images/thomas.jpeg'
@@ -18,19 +17,15 @@ const AboutPage = () => (
         flexDirection: ['column-reverse', null, null, null, null, 'row'],
       }}
     >
-      <img
+      <Image
         src={ImageThomas}
         alt="Frontal image of Thomas' face"
-        sx={{
-          maxWidth: 9,
-          mx: [null, null, null, null, null, 5],
-          borderRadius: t => t.radii[0],
-        }}
+        variant="large"
       />
       <Box>
-        <article sx={{ maxWidth: 13, fontSize: [2, null, 3] }}>
+        <Text as="article" variant="regular" sx={{ maxWidth: 13 }}>
           <p>
-            As a Software Engineer with a history in Network&Systems
+            As a Software Engineer with a history in Network & Systems
             Administration, I feel comfortable in every aspect of the stack. My
             background makes me specifically passionate about the integration of
             applications or microservices in a greater set-up as well as the
@@ -48,7 +43,7 @@ const AboutPage = () => (
             infrastructure tools like Docker and Kubernetes, and so much more.
           </p>
           <p>Always open for a conversation about technology or anything!</p>
-        </article>
+        </Text>
       </Box>
     </Flex>
   </Layout>

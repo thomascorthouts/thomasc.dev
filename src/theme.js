@@ -42,4 +42,16 @@ export default {
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   sizes: [0, 8, 16, 32, 48, 64, 128, 192, 256, 320, 480, 640, 800, 960],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  images: {
+    large: {
+      maxWidth: 9,
+      mx: [null, null, null, null, null, 5],
+      borderRadius: t => t.radii[0],
+    },
+  },
+  text: {
+    regular: {
+      fontSize: [2, null, 3],
+    },
+  },
 }
