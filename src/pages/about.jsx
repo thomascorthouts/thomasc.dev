@@ -22,7 +22,7 @@ const AboutPage = () => (
         alt="Frontal image of Thomas' face"
         variant="large"
       />
-      <Box>
+      <Box sx={{ mb: [3, null, null, null, 0] }}>
         <Text as="article" variant="regular" sx={{ maxWidth: 13 }}>
           <p>
             As a Software Engineer with a history in Network & Systems
@@ -43,6 +43,7 @@ const AboutPage = () => (
             infrastructure tools like Docker and Kubernetes, and so much more.
           </p>
           <p>Always open for a conversation about technology or anything!</p>
+          <p>Thomas</p>
         </Text>
       </Box>
     </Flex>
