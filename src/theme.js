@@ -46,6 +46,7 @@ export default {
   images: {
     large: {
       maxWidth: 9,
+      maxHeight: 400,
       mx: [null, null, null, null, null, 5],
       borderRadius: t => t.radii[0],
     },
@@ -53,6 +54,15 @@ export default {
   text: {
     regular: {
       fontSize: [2, null, 3],
+    },
+  },
+  buttons: {
+    primary: {
+      color: 'white',
+      bg: 'blue',
+      '&:hover': {
+        bg: 'blueLighter',
+      },
     },
   },
 }

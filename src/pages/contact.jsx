@@ -1,6 +1,15 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { Flex, Box, Image, Text } from '@theme-ui/components'
+import {
+  Flex,
+  Box,
+  Image,
+  Text,
+  Label,
+  Input,
+  Button,
+  Textarea,
+} from '@theme-ui/components'
 import React from 'react'
 import { Link } from 'gatsby'
 
@@ -115,6 +124,23 @@ const ContactPage = () => (
             E-mail: thomas@thomasc.dev
           </li>
         </ul>
+        <h2>Contact Form</h2>
+        <Box
+          as="form"
+          name="contact"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <Label htmlFor="name">Name:</Label>
+          <Input name="name" mb={3} />
+          <Label htmlFor="email">Email:</Label>
+          <Input name="email" mb={3} />
+          <Label htmlFor="message">Message:</Label>
+          <Textarea name="message" rows="5" mb={3} />
+          <Button>Submit</Button>
+        </Box>
       </Box>
     </Flex>
   </Layout>
