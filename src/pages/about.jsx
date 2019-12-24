@@ -22,8 +22,14 @@ const AboutPage = () => (
         alt="Frontal image of Thomas' face"
         variant="large"
       />
-      <Box sx={{ mb: [3, null, null, null, 0] }}>
-        <Text as="article" variant="regular" sx={{ maxWidth: 13 }}>
+      <Box
+        sx={{
+          mb: [3, null, null, null, null, 0],
+          ml: [null, null, null, null, null, 4],
+          maxWidth: 13,
+        }}
+      >
+        <Text as="article" variant="regular">
           <p>
             As a Software Engineer with a history in Network & Systems
             Administration, I feel comfortable in every aspect of the stack. My
