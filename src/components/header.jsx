@@ -54,6 +54,18 @@ const Header = ({ title }) => (
       >
         About
       </Link>
+      <Link
+        to="/contact"
+        sx={{
+          fontSize: 4,
+          color: 'greyLighter',
+          '&:hover, &:focus': { color: 'white' },
+          textDecoration: 'none',
+          ml: 2,
+        }}
+      >
+        Contact
+      </Link>
     </Box>
   </Flex>
 )
