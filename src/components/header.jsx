@@ -7,6 +7,26 @@ import React from 'react'
 
 import Bitmoji from 'images/bitmoji.png'
 
+const HeaderLink = ({ path, children }) => (
+  <Link
+    to={path}
+    sx={{
+      fontSize: 4,
+      color: 'greyLighter',
+      '&:hover, &:focus': { color: 'white' },
+      textDecoration: 'none',
+      px: [3, null, 2],
+    }}
+    activeStyle={{
+      backgroundColor: 'white',
+      borderRadius: '4px',
+      color: '#3260ab',
+    }}
+  >
+    {children}
+  </Link>
+)
+
 const Header = ({ title }) => (
   <Flex
     as="header"
@@ -16,6 +36,7 @@ const Header = ({ title }) => (
       mb: 3,
       p: 3,
       justifyContent: 'space-between',
+      flexDirection: ['column', null, 'row'],
     }}
   >
     <Box
@@ -27,45 +48,19 @@ const Header = ({ title }) => (
       <Link to="/">
         <img src={Bitmoji} alt="Bitmoji drawing of Thomas" sx={{ height: 3 }} />
       </Link>
-      <h1 sx={{ margin: 0, ml: 3 }}>{title}</h1>
+      <div sx={{ mt: 'auto' }}>
+        <h1 sx={{ fontSize: [4, 5], margin: 0, ml: 3 }}>{title}</h1>
+      </div>
     </Box>
-    <Box as="nav" sx={{ mt: 'auto' }}>
-      <Link
-        to="/"
-        sx={{
-          fontSize: 4,
-          color: 'greyLighter',
-          '&:hover, &:focus': { color: 'white' },
-          textDecoration: 'none',
-          ml: 2,
-        }}
-      >
-        Home
-      </Link>
-      <Link
-        to="/about"
-        sx={{
-          fontSize: 4,
-          color: 'greyLighter',
-          '&:hover, &:focus': { color: 'white' },
-          textDecoration: 'none',
-          ml: 2,
-        }}
-      >
-        About
-      </Link>
-      <Link
-        to="/contact"
-        sx={{
-          fontSize: 4,
-          color: 'greyLighter',
-          '&:hover, &:focus': { color: 'white' },
-          textDecoration: 'none',
-          ml: 2,
-        }}
-      >
-        Contact
-      </Link>
+    <Box
+      as="nav"
+      sx={{
+        mt: [3, null, 'auto'],
+      }}
+    >
+      <HeaderLink path="/">Home</HeaderLink>
+      <HeaderLink path="/about">About</HeaderLink>
+      <HeaderLink path="/contact">Contact</HeaderLink>
     </Box>
   </Flex>
 )

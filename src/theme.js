@@ -45,9 +45,8 @@ export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   images: {
     large: {
-      maxWidth: 9,
+      width: 9,
       maxHeight: 400,
-      mx: [null, null, null, null, null, 5],
       borderRadius: t => t.radii[0],
     },
   },
