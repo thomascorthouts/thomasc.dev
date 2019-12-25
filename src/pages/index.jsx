@@ -7,7 +7,7 @@ import { Link } from 'gatsby'
 import Layout from 'components/layout'
 import SEO from 'components/seo'
 
-import ImageThomas from 'images/thomas.jpeg'
+import ImageThomas from 'components/image'
 
 const IndexPage = () => (
   <Layout>
@@ -17,11 +17,7 @@ const IndexPage = () => (
         flexDirection: ['column-reverse', null, null, null, null, 'row'],
       }}
     >
-      <Image
-        src={ImageThomas}
-        alt="Frontal image of Thomas' face"
-        variant="large"
-      />
+      <ImageThomas />
       <Box
         sx={{
           mb: [3, null, null, null, null, 0],
