@@ -1,0 +1,68 @@
+jobs:
+  - company: DataCamp
+    logo: datacamp_logo.svg
+    company_description: Datacamp's mission is to democratize data science and to increase data fluency by building the best online data science education platform. Through its web platform and mobile application, the company enables individuals and companies into using data in their day-to-day jobs.
+    website: https://www.datacamp.com/
+    functions:
+      - title: Full Stack Software Engineer, Growth
+        description: As the Growth Team, we focus mainly on acquisition. We do this by taking ownership of the signed-out experience for our users and optimizing for UX and performance so that our website is valuable for people all around the world.
+        location: New York City, NY, US
+        start_date: July 2019
+        end_date: null
+        major_accomplishments: NA
+      - title: Growth Engineering Intern
+        description: As part of the growth team, I was focused on using an experimentation mindset towards building out new features. We used the concept of A/B-testing to testing potential new features to validate their true value without putting a lot of resources into it.
+        location: New York City, NY
+        start_date: February 2019
+        end_date: July 2019
+        major_accomplishments: NA
+      - title: Mobile Software Engineering Intern
+        description: As a Mobile Software Engineering Intern, my main focus was on building out a mobile application, which was built in React Native, with new features. Some of the key factors of my internship were an overhaul of the applications onboarding, the authentication flow and the gamification of the platform.
+        location: Leuven, BE
+        start_date: July 2018
+        end_date: August 2018
+        major_accomplishments: NA
+  - company: Calibrate
+    logo: calibrate_logo.svg
+    company_description: Calibrate is a Belgian web agency with a central service, for all the facets of web development. From creating a digital strategy over design and hosting to data analysis. Depending on the customer's needs Calibrate offers a tailor made solution. Calibrate is Drupal focussed, but also has extensive experience in Laravel, Node.js, etc.
+    website: https://www.calibrate.be/
+    functions:
+      - title: DevOps Intern
+        description: For my internship, I got to work on the Google Cloud Platform. There I tested the possibilities of the open-source system Kubernetes. Additionally I worked with the Linux kernel to test the compatibility they set up for hosting their own solutions on the platform.
+        location: Edegem, BE
+        start_date: August 2017
+        end_date: August 2017
+        major_accomplishments: NA
+education:
+  - school: UC Leuven-Limburg
+    logo: ucll.svg
+    subject: Bachelor of Applied Information Technology
+    location: Leuven, BE
+    major: Software Engineering
+    minor: Network & System Administration
+    start_date: 2016
+    end_date: 2019
+    grade: Magna Cum Laude
+    website: https://www.ucll.be/
+volunteering:
+  - organization: Top Vakantie vzw
+    website: https://www.topvakantie.be/
+    logo: topvakantie.svg
+    start_date: July 2016
+    end_date: null
+    role: Hoofdanimator & Centrumleider
+  - organization: Loko
+    website: https://www.loko.be/
+    logo: loko.svg
+    start_date: April 2013
+    end_date: June 2019
+    role: Responsible TSD
+    description:
+      Technical Support Division, We support LOKO logistically for organizing big events like the 24-hour run, Beiaardcantus, ITHAKA ..
+      We're responsible for the electricity, lighting, safety ..
+  - organization: Top Vakantie vzw
+    website: https://www.topvakantie.be/
+    logo: topvakantie.svg
+    start_date: April 2013
+    end_date: null
+    role: Animator
