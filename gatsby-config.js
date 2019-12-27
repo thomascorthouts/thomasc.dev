@@ -3,15 +3,25 @@ module.exports = {
     title: `Thomas Corthouts`,
     description: `Thomas Corthouts' personal website.`,
     author: `@thomascorthouts`,
+    siteUrl: 'https://www.thomasc.dev',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-theme-ui`,
+    `gatsby-transformer-yaml`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data/`,
       },
     },
     `gatsby-transformer-sharp`,
