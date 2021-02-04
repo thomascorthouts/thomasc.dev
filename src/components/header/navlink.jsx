@@ -1,32 +1,23 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Link } from 'gatsby'
+/** @jsxImportSource theme-ui */
+import { jsx, Text } from 'theme-ui'
+import Link from 'next/link'
 import PropTypes from 'prop-types'
-import React from 'react'
 
-const HeaderLink = ({ path, children }) => (
+const HeaderLink = ({ path, children, active }) => {
+  const hoverStyle = { color: 'blue', backgroundColor: 'white', borderRadius: '4px', cursor: 'pointer' }
+  const linkStyle = active ? hoverStyle : {color: 'greyLighter', '&:hover, &:focus, &:active': hoverStyle}
+  return (
   <Link
-    to={path}
-    sx={{
-      fontSize: 4,
-      color: 'greyLighter',
-      '&:hover, &:focus': { color: 'white' },
-      textDecoration: 'none',
-      px: [3, null, 2],
-    }}
-    activeStyle={{
-      backgroundColor: 'white',
-      borderRadius: '4px',
-      color: '#3260ab',
-    }}
+    href={path}
   >
-    {children}
+    <a sx={{ textDecoration: 'none' }}><Text sx={{...linkStyle,  px: [3, null, 2], fontSize: 4,}} active={active}>{children}</Text></a>
   </Link>
-)
+)}
 
 HeaderLink.propTypes = {
   path: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
+  active: PropTypes.bool.isRequired,
 }
 
 export default HeaderLink

@@ -41,6 +41,7 @@ typings/
 
 # Optional npm cache directory
 .npm
+build/
 
 # Optional eslint cache
 .eslintcache
@@ -55,8 +56,7 @@ typings/
 .env*
 
 # gatsby files
-.cache/
-public
+.next/
 
 # Mac files
 .DS_Store
@@ -67,3 +67,6 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# VS Code
+.vscode/

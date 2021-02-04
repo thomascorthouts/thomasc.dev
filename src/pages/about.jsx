@@ -1,13 +1,10 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import React from 'react'
-import { Link } from 'gatsby'
-import { Flex, Box, Image, Text } from '@theme-ui/components'
+/** @jsxImportSource theme-ui */
+import { jsx, Flex, Box, Text } from 'theme-ui'
 
-import Layout from 'components/layout'
-import SEO from 'components/seo'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
-import ImageThomas from 'components/image'
+import ImageThomas from '../components/image'
 
 const AboutPage = () => (
   <Layout title="About Thomas">

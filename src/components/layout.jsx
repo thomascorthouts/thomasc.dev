@@ -1,12 +1,11 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 import { ThemeProvider, jsx } from 'theme-ui'
-import React from 'react'
 import PropTypes from 'prop-types'
-import { Global, css } from '@emotion/core'
+import { Global, css } from '@emotion/react'
 
 import Header from './header'
 import Footer from './footer'
-import theme from 'theme'
+import theme from '../theme'
 
 const Layout = ({ title, children }) => (
   <ThemeProvider theme={theme}>

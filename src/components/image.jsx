@@ -1,27 +1,17 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Link, useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+/** @jsxImportSource theme-ui */
+import { jsx, Box } from 'theme-ui'
 
-const Image = ({ title }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      image: file(relativePath: { eq: "thomas.jpeg" }) {
-        childImageSharp {
-          fixed(width: 320) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `)
+
+const ImageComponent = () => {
   return (
-    <Img
-      fixed={data.image.childImageSharp.fixed}
-      alt="Picture of Thomas"
-      sx={{ borderRadius: 0 }}
-    />
+    <Box>
+      <img
+        src="/thomas.jpeg"
+        alt="Picture of Thomas"
+        sx={{ borderRadius: 0, maxWidth: 320 }}
+      />
+    </Box>
   )
 }
 
-export default Image
+export default ImageComponent

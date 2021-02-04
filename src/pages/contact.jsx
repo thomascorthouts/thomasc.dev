@@ -1,28 +1,22 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import {
-  Flex,
+/** @jsxImportSource theme-ui */
+import { jsx, 
   Box,
-  Image,
   Text,
   Label,
   Input,
   Button,
-  Textarea,
-} from '@theme-ui/components'
-import React from 'react'
-import { Link } from 'gatsby'
+  Textarea
+} from 'theme-ui'
 
-import Layout from 'components/layout'
-import SEO from 'components/seo'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
-import ImageThomas from 'images/thomas.jpeg'
-import IconGithub from 'images/icons/github.svg'
-import IconLinkedIn from 'images/icons/linkedin.svg'
-import IconTwitter from 'images/icons/twitter.svg'
-import IconEmail from 'images/icons/email.svg'
+import IconGithub from '../images/icons/github.svg'
+import IconLinkedIn from '../images/icons/linkedin.svg'
+import IconTwitter from '../images/icons/twitter.svg'
+import IconEmail from '../images/icons/email.svg'
 
-import { GITHUB_LINK, LINKEDIN_LINK, TWITTER_LINK } from 'routes'
+import { GITHUB_LINK, LINKEDIN_LINK, TWITTER_LINK } from '../routes'
 
 const ContactPage = () => (
   <Layout>

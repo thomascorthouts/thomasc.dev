@@ -1,28 +1,17 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Flex, Box } from '@theme-ui/components'
-import { Link, useStaticQuery, graphql } from 'gatsby'
-import Image from 'gatsby-image'
+/** @jsxImportSource theme-ui */
+import { jsx, Flex, Box } from 'theme-ui'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+
+
 import PropTypes from 'prop-types'
-import React from 'react'
 
 import HeaderLink from './navlink'
 
-import Bitmoji from 'images/bitmoji.png'
 
 const Header = ({ title }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      bitmojiImage: file(relativePath: { eq: "bitmoji.png" }) {
-        childImageSharp {
-          fixed(width: 32) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `)
-
+  const router = useRouter()
+  console.log(router.pathname)
   return (
     <Flex
       as="header"
@@ -41,11 +30,14 @@ const Header = ({ title }) => {
           display: 'flex',
         }}
       >
-        <Link to="/">
-          <Image
-            fixed={data.bitmojiImage.childImageSharp.fixed}
-            alt="Bitmoji drawing of Thomas"
-          />
+        <Link href="/">
+          <a>
+            <img
+              src="/bitmoji.png"
+              sx={{height: 32, width: 32}}
+              alt="Bitmoji drawing of Thomas"
+            />
+          </a>
         </Link>
         <div sx={{ mt: 'auto' }}>
           <h1 sx={{ fontSize: [4, 5], margin: 0, ml: 3 }}>{title}</h1>
@@ -58,8 +50,8 @@ const Header = ({ title }) => {
         }}
       >
         <HeaderLink path="/">Home</HeaderLink>
-        <HeaderLink path="/about">About</HeaderLink>
-        <HeaderLink path="/contact">Contact</HeaderLink>
+        <HeaderLink active={router.pathname === "/about"} path="/about">About</HeaderLink>
+        <HeaderLink active={router.pathname === "/contact"} path="/contact">Contact</HeaderLink>
       </Box>
     </Flex>
   )
