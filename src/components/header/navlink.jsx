@@ -14,10 +14,14 @@ const HeaderLink = ({ path, children, active }) => {
   </Link>
 )}
 
+HeaderLink.defaultProps = {
+  active: false
+}
+
 HeaderLink.propTypes = {
   path: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  active: PropTypes.bool.isRequired,
+  active: PropTypes.bool,
 }
 
 export default HeaderLink

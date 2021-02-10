@@ -11,7 +11,6 @@ import HeaderLink from './navlink'
 
 const Header = ({ title }) => {
   const router = useRouter()
-  console.log(router.pathname)
   return (
     <Flex
       as="header"

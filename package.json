@@ -6,6 +6,8 @@
   "author": "Thomas Corthouts <thomas@thomasc.dev>",
   "dependencies": {
     "@emotion/react": "^11.0.0",
+    "@sanity/client": "^2.2.6",
+    "groq": "^2.2.6",
     "next": "^10.0.6",
     "next-compose-plugins": "^2.2.1",
     "next-svgr": "^0.0.2",
