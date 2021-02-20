@@ -1,12 +1,13 @@
 /** @jsxImportSource theme-ui */
-import { jsx, Flex, Box, Text } from 'theme-ui'
+import { Flex, Box, Text } from 'theme-ui'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from 'components/layout'
+import SEO from 'components/seo'
 
-import ImageThomas from '../components/image'
+import ImageThomas from 'components/image'
+import { NextPage } from 'next'
 
-const IndexPage = () => (
+const IndexPage: NextPage = () => (
   <Layout>
     <SEO title="Home" />
     <Flex

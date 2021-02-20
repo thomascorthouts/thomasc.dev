@@ -1,10 +1,14 @@
-import PropTypes from 'prop-types'
 import Head from 'next/head'
 
-function SEO({ description, title }) {
-  const siteTitle = 'test'
+type Props = {
+  description?: string
+  title: string
+}
+
+const SEO: React.FC<Props> = ({ description = '', title }) => {
+  const siteTitle = 'Thomas Corthouts'
   return (
-     <Head>
+    <Head>
       <title>{`${title} | ${siteTitle}`}</title>
       <meta name="description" content={description} />
       <meta property="og:type" content="website" />
@@ -17,15 +21,6 @@ function SEO({ description, title }) {
       <meta property="twitter:description" content={description} />
     </Head>
   )
-}
-
-SEO.defaultProps = {
-  description: ``,
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  title: PropTypes.string.isRequired,
 }
 
 export default SEO

@@ -1,8 +1,7 @@
 /** @jsxImportSource theme-ui */
-import { jsx, Box } from 'theme-ui'
+import { Box } from 'theme-ui'
 
-
-const ImageComponent = () => {
+const ImageComponent: React.FC = () => {
   return (
     <Box>
       <img

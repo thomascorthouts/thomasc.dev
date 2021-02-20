@@ -1,24 +1,18 @@
 /** @jsxImportSource theme-ui */
-import { jsx, 
-  Box,
-  Text,
-  Label,
-  Input,
-  Button,
-  Textarea
-} from 'theme-ui'
+import { Text } from 'theme-ui'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from 'components/layout'
+import SEO from 'components/seo'
 
-import IconGithub from '../images/icons/github.svg'
-import IconLinkedIn from '../images/icons/linkedin.svg'
-import IconTwitter from '../images/icons/twitter.svg'
-import IconEmail from '../images/icons/email.svg'
+import IconGithub from 'images/icons/github.svg'
+import IconLinkedIn from 'images/icons/linkedin.svg'
+import IconTwitter from 'images/icons/twitter.svg'
+import IconEmail from 'images/icons/email.svg'
 
-import { GITHUB_LINK, LINKEDIN_LINK, TWITTER_LINK } from '../routes'
+import { GITHUB_LINK, LINKEDIN_LINK, TWITTER_LINK } from 'routes'
+import { NextPage } from 'next'
 
-const ContactPage = () => (
+const ContactPage: NextPage = () => (
   <Layout>
     <SEO title="Contact" />
 
@@ -27,8 +21,7 @@ const ContactPage = () => (
     </h1>
     <Text as="section" variant="regular" sx={{ maxWidth: 13 }}>
       <p>
-        {' '}
-        I'll be honest, I stole{' '}
+        I'll be honest, I stole
         <a href="https://ekkrit.design/contact" sx={{ color: 'inherit' }}>
           that headline
         </a>
@@ -108,24 +101,6 @@ const ContactPage = () => (
         E-mail: thomas@thomasc.dev
       </li>
     </ul>
-    <h2>Contact Form</h2>
-    <Box
-      as="form"
-      name="contact"
-      method="post"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      sx={{ maxWidth: 12 }}
-    >
-      <input type="hidden" name="form-name" value="contact" />
-      <Label htmlFor="name">Name:</Label>
-      <Input name="name" sx={{ mb: 3, maxWidth: 9 }} />
-      <Label htmlFor="email">Email:</Label>
-      <Input name="email" sx={{ mb: 3, maxWidth: 9 }} />
-      <Label htmlFor="message">Message:</Label>
-      <Textarea name="message" rows="5" sx={{ mb: 3, maxWidth: 10 }} />
-      <Button>Submit</Button>
-    </Box>
   </Layout>
 )
 

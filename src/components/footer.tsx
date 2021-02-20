@@ -1,13 +1,13 @@
 /** @jsxImportSource theme-ui */
-import { jsx, Flex, Box } from 'theme-ui'
+import { Flex, Box } from 'theme-ui'
 
-import { GITHUB_LINK, LINKEDIN_LINK, TWITTER_LINK } from '../routes'
+import { GITHUB_LINK, LINKEDIN_LINK, TWITTER_LINK } from 'routes'
 
-import IconGithub from '../images/icons/github.svg'
-import IconLinkedIn from '../images/icons/linkedin.svg'
-import IconTwitter from '../images/icons/twitter.svg'
+import IconGithub from 'images/icons/github.svg'
+import IconLinkedIn from 'images/icons/linkedin.svg'
+import IconTwitter from 'images/icons/twitter.svg'
 
-const Footer = () => (
+const Footer: React.FC = () => (
   <Flex
     as="footer"
     sx={{

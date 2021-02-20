@@ -1,15 +1,15 @@
 /** @jsxImportSource theme-ui */
-import { jsx, Flex, Box } from 'theme-ui'
+import { Flex, Box } from 'theme-ui'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-
-import PropTypes from 'prop-types'
-
 import HeaderLink from './navlink'
 
+type Props = {
+  title: string
+}
 
-const Header = ({ title }) => {
+const Header: React.FC<Props> = ({ title }) => {
   const router = useRouter()
   return (
     <Flex
@@ -33,7 +33,7 @@ const Header = ({ title }) => {
           <a>
             <img
               src="/bitmoji.png"
-              sx={{height: 32, width: 32}}
+              sx={{ height: 32, width: 32 }}
               alt="Bitmoji drawing of Thomas"
             />
           </a>
@@ -49,15 +49,15 @@ const Header = ({ title }) => {
         }}
       >
         <HeaderLink path="/">Home</HeaderLink>
-        <HeaderLink active={router.pathname === "/about"} path="/about">About</HeaderLink>
-        <HeaderLink active={router.pathname === "/contact"} path="/contact">Contact</HeaderLink>
+        <HeaderLink active={router.pathname === '/about'} path="/about">
+          About
+        </HeaderLink>
+        <HeaderLink active={router.pathname === '/contact'} path="/contact">
+          Contact
+        </HeaderLink>
       </Box>
     </Flex>
   )
-}
-
-Header.propTypes = {
-  title: PropTypes.string.isRequired,
 }
 
 export default Header

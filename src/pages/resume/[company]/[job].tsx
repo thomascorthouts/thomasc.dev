@@ -1,13 +1,17 @@
 /** @jsxImportSource theme-ui */
-import { jsx, Flex, Box, Text } from 'theme-ui'
+import { Flex, Box, Text } from 'theme-ui'
 
-import Layout from '../../../components/layout'
-import SEO from '../../../components/seo'
+import Layout from 'components/layout'
+import SEO from 'components/seo'
 
+import client from 'client'
+import { GetServerSideProps, NextPage } from 'next'
 
-import client from '../../../client'
+type Props = {
+  job: any
+}
 
-const PostPage = ({job}) => (
+const PostPage: NextPage<Props> = ({ job }) => (
   <Layout>
     <SEO title="Home" />
     <Flex
@@ -24,7 +28,7 @@ const PostPage = ({job}) => (
       >
         <Text as="h1">{job.title}</Text>
         <Text as="span">at {job.company}</Text>
-        <Text as="p" variant="regular" sx={{mt: 24}}>
+        <Text as="p" variant="regular" sx={{ mt: 24 }}>
           {job.description}
         </Text>
       </Box>
@@ -32,17 +36,20 @@ const PostPage = ({job}) => (
   </Layout>
 )
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async context => {
   // It's important to default the slug so that it doesn't return "undefined"
-  const { job = "" } = context.query
-  const jobData =  await client.fetch(`
+  const { job = '' } = context.query
+  const jobData = await client.fetch(
+    `
     *[_type == "job" && slug.current == $job]{
       "company": company->name,
       ...
     }[0]
-  `, { job })
+  `,
+    { job }
+  )
 
-  return {props: {job: jobData}}
+  return { props: { job: jobData } }
 }
 
 export default PostPage

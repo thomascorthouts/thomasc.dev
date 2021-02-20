@@ -1,10 +1,11 @@
 /** @jsxImportSource theme-ui */
-import { jsx, Flex, Box, Image, Text } from 'theme-ui'
+import { Flex, Box, Text } from 'theme-ui'
 import Link from 'next/link'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from 'components/layout'
+import SEO from 'components/seo'
+import { NextPage } from 'next'
 
-const NotFoundPage = () => (
+const NotFoundPage: NextPage = () => (
   <Layout>
     <SEO title="404: Not found" />
     <Flex
@@ -40,8 +41,8 @@ const NotFoundPage = () => (
           Well, I guess we're here now...You hit a page that few people will see
           in their lives.. Unfortunately there isn't going on much around here,
           I'm sorry. Hopefully you will have more luck on{' '}
-          <Link href="/" sx={{ color: 'inherit' }}>
-            <a>the homepage</a>
+          <Link href="/">
+            <a sx={{ color: 'inherit' }}>the homepage</a>
           </Link>
           .
         </Text>

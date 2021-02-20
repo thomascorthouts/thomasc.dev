@@ -1,13 +1,17 @@
 /** @jsxImportSource theme-ui */
-import { ThemeProvider, jsx } from 'theme-ui'
-import PropTypes from 'prop-types'
+import { ThemeProvider } from 'theme-ui'
 import { Global, css } from '@emotion/react'
 
 import Header from './header'
 import Footer from './footer'
-import theme from '../theme'
+import theme from 'theme'
 
-const Layout = ({ title, children }) => (
+type Props = {
+  title?: string
+  children: React.ReactNode
+}
+
+const Layout: React.FC<Props> = ({ title = 'Thomas Corthouts', children }) => (
   <ThemeProvider theme={theme}>
     <Global
       styles={css`
@@ -25,14 +29,5 @@ const Layout = ({ title, children }) => (
     <Footer />
   </ThemeProvider>
 )
-
-Layout.propTypes = {
-  title: PropTypes.string,
-  children: PropTypes.node.isRequired,
-}
-
-Layout.defaultProps = {
-  title: 'Thomas Corthouts',
-}
 
 export default Layout
