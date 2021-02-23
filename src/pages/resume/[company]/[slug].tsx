@@ -4,11 +4,11 @@ import { Flex, Box, Text } from 'theme-ui'
 import Layout from 'components/layout'
 import SEO from 'components/seo'
 
-import client from 'client'
 import { GetServerSideProps, NextPage } from 'next'
+import getJobForSlug, { Job } from 'sources/getJobForSlug'
 
 type Props = {
-  job: any
+  job: Job
 }
 
 const PostPage: NextPage<Props> = ({ job }) => (
@@ -38,18 +38,12 @@ const PostPage: NextPage<Props> = ({ job }) => (
 
 export const getServerSideProps: GetServerSideProps = async context => {
   // It's important to default the slug so that it doesn't return "undefined"
-  const { job = '' } = context.query
-  const jobData = await client.fetch(
-    `
-    *[_type == "job" && slug.current == $job]{
-      "company": company->name,
-      ...
-    }[0]
-  `,
-    { job }
-  )
+  const { slug } = context.query
+  if (typeof slug === 'undefined' || Array.isArray(slug))
+    return { notFound: true }
+  const job = await getJobForSlug(slug)
 
-  return { props: { job: jobData } }
+  return { props: { job } }
 }
 
 export default PostPage

@@ -1,5 +1,3 @@
-import client from 'part:@sanity/base/client'
-
 export default {
   name: 'job',
   title: 'Job',
@@ -71,12 +69,14 @@ export default {
     select: {
       title: 'title',
       company: 'company.name',
+      companyLogo: 'company.logoMark',
     },
-    prepare: () => {},
     prepare(selection) {
-      const { title, company } = selection
+      const { title, company, companyLogo } = selection
       return {
-        title: `${title} - ${company}`,
+        title,
+        subtitle: `at ${company}`,
+        media: companyLogo,
       }
     },
   },

@@ -4,13 +4,12 @@ import { Flex, Box, Text } from 'theme-ui'
 import Layout from 'components/layout'
 import SEO from 'components/seo'
 
-import client from 'client'
-
 import Link from 'next/link'
 import { GetServerSideProps, NextPage } from 'next'
+import getCompanyForSlug, { Company } from 'sources/getCompanyForSlug'
 
 type Props = {
-  company: any
+  company: Company
 }
 
 const CompanyPage: NextPage<Props> = ({ company }) => (
@@ -52,19 +51,13 @@ const CompanyPage: NextPage<Props> = ({ company }) => (
 )
 
 export const getServerSideProps: GetServerSideProps = async context => {
-  // It's important to default the slug so that it doesn't return "undefined"
-  const { company = '' } = context.query
-  const companyData = await client.fetch(
-    `
-    *[_type == "company" && slug.current == $company][0]{
-      ...,
-      "roles": *[ _type == "job" && company._ref == ^._id ]
-    }
-  `,
-    { company }
-  )
+  const { company: slug } = context.query
 
-  return { props: { company: companyData } }
+  if (typeof slug === 'undefined' || Array.isArray(slug))
+    return { notFound: true }
+  const company = await getCompanyForSlug(slug)
+
+  return { props: { company } }
 }
 
 export default CompanyPage

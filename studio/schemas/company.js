@@ -37,10 +37,16 @@ export default {
       title: 'logo',
       type: 'image',
     },
+    {
+      name: 'logoMark',
+      title: 'logoMark',
+      type: 'image',
+    },
   ],
   preview: {
     select: {
       title: 'name',
+      media: 'logoMark',
     },
   },
 }
